@@ -41,7 +41,7 @@ app.post("/webhook", async (req, res) => {
       let msgBody = body_param.entry[0].changes[0].value.messages[0].text.body;
       try {
         console.log(phoneNumber, from, msgBody);
-        if (msgBody.toLowercase() === "hi") {
+        if (msgBody.toLowerCase() === "hi") {//
           msgBody = "Hello Naveen";
         }
         console.log(phoneNumber, from, msgBody);
