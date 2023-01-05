@@ -40,10 +40,11 @@ app.post("/webhook", async (req, res) => {
       let from = body_param.entry[0].changes[0].value.messages[0].from;
       let msgBody = body_param.entry[0].changes[0].value.messages[0].text.body;
       try {
-//         console.log(phoneNumber, from, msgBody);
+        console.log(phoneNumber, from, msgBody);
         if (msgBody.toLowercase() === "hi") {
           msgBody = "Hello Naveen";
         }
+        console.log(phoneNumber, from, msgBody);
         let data = await axios({
           method: "POST",
           url: `https://graph.facebook.com/v15.0/${phoneNumber}/messages`,
