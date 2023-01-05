@@ -8,8 +8,8 @@ const request = require("request");
 const app = express();
 app.use(bodyParser.json());
 
-let verifyToken = process.env.VERIFY_TOKEN;
-let accessToken = process.env.ACCESS_TOKEN;
+let verifyToken = "abcd";
+let accessToken = "EAAO9aDLEtwABANdZBIdubKk5RxE0iZBzNJuZBJcBgb238B55J1j1rZADRkmUQzOHlZCkWEC3IXS8CtkcLBGdNOcbzAQmaRbByZAEudXUiNdJ2qUFwtcaqsZA1CHsL8xVxgfW5q1a76lEvUrHmQ5jKS1TwjWNHbwQkqBzA9b0rZBvr9p1ZAHCg0A1tznpzr8CWeOm2FZCBzbe3ZCygZDZD";
 
 // to verify the callback ul from dashboard side- cloud api side
 app.get("/webhook", (req, res) => {
