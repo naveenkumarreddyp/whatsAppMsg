@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 
 let verifyToken = "abcd";
-let accessToken = "EAAO9aDLEtwABACrV2AAZBnCZB1zTkMqQ4H2rcffoeBzNGUsPJgyGI3dCOvP5IQ97AeL2yWgiNwh0LGyuGR0ZAui0nbOgddTjWZCQqkrgLwvqI0j4NfZC9rDXAemXFztg1tp4IHqlyt5jRymczRJLAyk8VDpZB6AMvaIUQnAiUsEizXsn8LWxyd";
+let accessToken = "EAAO9aDLEtwABAEaDORb6Na0L3Y7jmeI41ZAeZBn3CoPT7MF8tIie4EgDb7BSUtasWXWtZArUjRhs9iRnxwMko1nVoh9yerpV3peztGMoxRZAPnL1CBdZC6ZButNBiGpfOfa0AX6Gyim4BSnleAD4835ZCdCUi3hZAHZBINr6TvZBy1Voe7LzZCvZAZA70";
 
 // to verify the callback ul from dashboard side- cloud api side
 app.get("/webhook", (req, res) => {
@@ -28,6 +28,7 @@ app.get("/webhook", (req, res) => {
 
 app.post("/webhook", async (req, res) => {
   let body_param = req.body;
+  console.log(body_param)
   if (body_param.object) {
     if (
       body_param.entry &&
