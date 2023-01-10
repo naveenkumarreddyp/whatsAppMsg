@@ -28,8 +28,15 @@ app.get("/webhook", (req, res) => {
 
 app.post("/webhook", async (req, res) => {
   let body_param = req.body;
-  console.log(body_param)
+  console.log("body_param", body_param)
   if (body_param.object) {
+    console.log("object",body_param.object )
+    console.log("object1",body_param.entry )
+    console.log("object2",body_param.entry[0].changes )
+     console.log("object3",body_param.entry[0].changes[0].value.messages )
+    console.log("phno",body_param.entry[0].changes[0].value.metadata.phone_number_id )
+    console.log("from",body_param.entry[0].changes[0].value.messages[0].from )
+    console.log("msgbody",body_param.entry[0].changes[0].value.messages[0].text.body )
     if (
       body_param.entry &&
       body_param.entry[0].changes &&
